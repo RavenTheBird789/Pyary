@@ -1,6 +1,7 @@
 # Diary
 import os
 import time
+import hashlib
 
 def diary_UI(selection):
     def wrapper():
@@ -101,4 +102,40 @@ def user_selection():
         os._exit(0)
     else:
         print("Invalid Input")
-user_selection()
+
+def main():
+    if os.path.exists("password.txt"):
+        user_name = ""
+        user_password = ""
+        with open("username.txt", "r", encoding="utf-8") as un:
+            user_name = un.read().strip()
+        with open("password.txt", "r", encoding="utf-8") as pt:
+            user_password = pt.read().strip()
+
+        authentication_query = input("What is the password?: ").strip()
+        hashed_auth_query = hashlib.sha256(authentication_query.encode()).hexdigest()
+
+        if hashed_auth_query == user_password:
+            print("Access Granted")
+            time.sleep(1)
+            print(f"Welcome, {user_name}")
+            time.sleep(2)
+            os.system('clear')
+            user_selection()
+        else:
+            print("Access Denied")
+
+    else:
+        username = input("What is your name?: ")
+        with open("username.txt", "w") as un:
+            un.write("".join(username))
+    
+        password = input("What is the password you'd like to set?: ").strip()
+        password_hash = hashlib.sha256(password.encode()).hexdigest()
+        with open("password.txt", "w") as pw:
+            pw.write("".join(password_hash))
+        print("Your password has been saved")
+        time.sleep(1)
+        print("Please, run the script again")
+        time.sleep(1)
+main()
