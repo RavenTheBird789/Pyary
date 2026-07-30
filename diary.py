@@ -118,7 +118,7 @@ def main():
         if hashed_auth_query == user_password:
             print("Access Granted")
             time.sleep(1)
-            print(f"Welcome, {user_name}")
+            print(f"Welcome, {user_name} :)")
             time.sleep(2)
             os.system('clear')
             user_selection()
@@ -138,4 +138,5 @@ def main():
         time.sleep(1)
         print("Please, run the script again")
         time.sleep(1)
+        os.system('clear')
 main()
