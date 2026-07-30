@@ -5,7 +5,7 @@ import time
 def diary_UI(selection):
     def wrapper():
         print("=========================")
-        print("----------DIARY----------")
+        print("----------PYARY----------")
         print("=========================")
         print("---By: RavenTheBird789---")
         print("=========================")
