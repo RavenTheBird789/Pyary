@@ -66,6 +66,15 @@ def show_entries():
     myDiary = {i + 1: entry for i, entry in enumerate(entry_list)}
     print(myDiary)
 
+def exit_animation():
+    """Handles the graceful exit animation cleanly."""
+    for i in range(4):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Exiting{'.' * i}")
+        time.sleep(0.5)
+    os.system('cls' if os.name == 'nt' else 'clear')
+    os._exit(0)
+
 def user_prompt():
     prompt = input("Would you like to return to the main menu? (yes/no): ")
     if prompt == "yes":
@@ -73,7 +82,7 @@ def user_prompt():
         user_selection()
     elif prompt == "no":
         os.system('cls' if os.name == 'nt' else 'clear')
-        return;
+        exit_animation()
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Invalid input, returning to main menu...")
@@ -102,7 +111,7 @@ def user_selection():
         user_prompt()
     elif user_choice == '5':
         os.system('cls' if os.name == 'nt' else 'clear')
-        os._exit(0)
+        exit_animation()
     else:
         print("Invalid Input")
 
