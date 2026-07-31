@@ -66,16 +66,16 @@ def show_entries():
 def user_prompt():
     prompt = input("Would you like to return to the main menu? (yes/no): ")
     if prompt == "yes":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         user_selection()
     elif prompt == "no":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         return;
     else:
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Invalid input, returning to main menu...")
         time.sleep(3);
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         user_selection()
 
 @diary_UI
@@ -98,7 +98,7 @@ def user_selection():
         time.sleep(2)
         user_prompt()
     elif user_choice == '5':
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         os._exit(0)
     else:
         print("Invalid Input")
@@ -120,7 +120,7 @@ def main():
             time.sleep(1)
             print(f"Welcome, {user_name} :)")
             time.sleep(2)
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             user_selection()
         else:
             print("Access Denied")
@@ -138,5 +138,5 @@ def main():
         time.sleep(1)
         print("Please, run the script again")
         time.sleep(1)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
 main()
