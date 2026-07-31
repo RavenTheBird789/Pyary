@@ -94,7 +94,7 @@ def user_prompt():
         exit_animation()
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Invalid input, returning to main menu...")
+        print(red(bold("Invalid input, returning to main menu...")))
         time.sleep(3);
         os.system('cls' if os.name == 'nt' else 'clear')
         user_selection()
