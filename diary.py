@@ -3,12 +3,15 @@ import os
 import time
 import hashlib
 
+def red(text: str) -> str:
+    return f"\033[91m{text}\033[0m"
+
 def diary_UI(selection):
     def wrapper():
         print("=========================")
         print("----------PYARY----------")
         print("=========================")
-        print("---By: RavenTheBird789---")
+        print("---" + red("By: RavenTheBird789") + "---")
         print("=========================")
         print("Option 1: Add an entry")
         print("Option 2: Remove an entry")
