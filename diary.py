@@ -6,10 +6,19 @@ import hashlib
 def red(text: str) -> str:
     return f"\033[91m{text}\033[0m"
 
+def green(text: str) -> str:
+    return f"\033[92m{text}\033[0m"
+
+def bold(text: str) -> str:
+    return f"\033[1m{text}\033[0m"
+
+def yellow(text: str) -> str:
+    return f"\033[93m{text}\033[0m"
+
 def diary_UI(selection):
     def wrapper():
         print("=========================")
-        print("----------PYARY----------")
+        print("----------" + yellow("PYARY") + "----------")
         print("=========================")
         print("---" + red("By: RavenTheBird789") + "---")
         print("=========================")
@@ -128,14 +137,14 @@ def main():
         hashed_auth_query = hashlib.sha256(authentication_query.encode()).hexdigest()
 
         if hashed_auth_query == user_password:
-            print("Access Granted")
+            print(green(bold("Access Granted")))
             time.sleep(1)
             print(f"Welcome, {user_name} :)")
             time.sleep(2)
             os.system('cls' if os.name == 'nt' else 'clear')
             user_selection()
         else:
-            print("Access Denied")
+            print(red(bold("Access Denied")))
 
     else:
         username = input("What is your name?: ")
