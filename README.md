@@ -7,5 +7,6 @@ Installation
 Execution
 * To run, simply type "python3 diary.py" in your command line within your terminal or a shortcut can be created in a terminal session using the bash alias command to run the program faster. (Ex: alias run="python3 diary.py")
 
-Update
+Updates
 * Password authentication included for diary access. Password security utilizes the built-in hashlib library to hash the users password with SHA256
+* Option to change password added to the diaries UI (Option 5)
