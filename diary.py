@@ -26,7 +26,8 @@ def diary_UI(selection):
         print("Option 2: Remove an entry")
         print("Option 3: Update an entry")
         print("Option 4: Show all entries")
-        print("Option 5: Exit")
+        print("Option 5: Change password")
+        print("Option 6: Exit")
         print("=========================")
         selection()
     return wrapper
@@ -119,10 +120,33 @@ def user_selection():
         time.sleep(2)
         user_prompt()
     elif user_choice == '5':
+        new_password = input("What is your new password?: ").strip()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        confirmation = input("Enter your new password again: ").strip()
+        if new_password == confirmation:
+            hashed_new_pass = hashlib.sha256(new_password.encode()).hexdigest()
+            os.remove("password.txt")
+            with open("password.txt", "w") as pw:
+                        pw.write("".join(hashed_new_pass))
+            for i in range(4):
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"Updating Password{'.' * i}")
+                time.sleep(0.5)
+                os.system('cls' if os.name == 'nt' else 'clear')
+            print(green(bold("Your password has been updated!")))
+            time.sleep(3)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            user_selection()
+        else:
+            print(red(bold("Error: Passwords do not match")))
+            time.sleep(3)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            user_selection()  
+    elif user_choice == '6':
         os.system('cls' if os.name == 'nt' else 'clear')
         exit_animation()
     else:
-        print("Invalid Input")
+        print(red(bold("Invalid Input")))
 
 def main():
     if os.path.exists("password.txt"):
