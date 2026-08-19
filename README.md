@@ -11,6 +11,7 @@ Execution
 
 Updates
 * Password authentication included for diary access. Password security utilizes the built-in hashlib library to hash the users password with SHA256
-* Option to change password added to the diaries UI (Option 5)
 
 ![Alt text](Images/199906.jpg)
+
+* Option to change password added to the diaries UI (Option 5)
