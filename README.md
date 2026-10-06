@@ -4,10 +4,24 @@ Python script for a diary that operates in the CLI that allows users to add entr
 ![Alt text](Images/199904.jpg)
 
 Installation
-* To download, simply type "git clone https://github.com/RavenTheBird789/Pyary" in your command line within your terminal
+
+```bash
+git clone https://github.com/RavenTheBird789/Pyary
+```
 
 Execution
-* To run, simply type "python3 diary.py" in your command line within your terminal or a shortcut can be created in a terminal session using the bash alias command to run the program faster. (Ex: alias run="python3 diary.py")
+
+To run
+
+```bash
+python3 diary.py
+```
+
+Optional shortcut
+
+```bash
+alias run="python3 diary.py")
+```
 
 Updates
 * Password authentication included for diary access. Password security utilizes the built-in hashlib library to hash the users password with SHA256
