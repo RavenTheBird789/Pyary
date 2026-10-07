@@ -20,7 +20,7 @@ python3 diary.py
 Optional shortcut
 
 ```bash
-alias run="python3 diary.py")
+alias run="python3 diary.py"
 ```
 
 Updates
